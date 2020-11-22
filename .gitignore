@@ -1,1 +1,4 @@
 env
+__pycache__
+jisho/jisho/__pycache__
+jisho/jisho/spiders/__pycache__

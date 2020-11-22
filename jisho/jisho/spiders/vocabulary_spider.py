@@ -18,8 +18,10 @@ class VocabularySpider(scrapy.Spider):
     def parse(self, response):
         print(VocabularyItem())
         for card in response.xpath('//div[@class="concept_light clearfix"]'):
+            furigana = card.xpath('.//span[@class="furigana"]/span')
+            
             vocabulary = VocabularyItem()
-            vocabulary.kanji = [x for x in card.xpath('.//span[@class="text"]/node()').get().strip()]
-            vocabulary.furigana = []
-            print(card.xpath(''))
+            vocabulary['kanji'] = [x for x in card.xpath('.//span[@class="text"]/node()').get().strip()]
+            vocabulary['furigana'] = [x.xpath('.//node()').get() if x.xpath('.//node()').get() is not None else '' for x in furigana]
+
             # print(card)
