@@ -11,7 +11,10 @@ class JishoItem(scrapy.Item):
     pass
 
 class VocabularyItem(scrapy.Item):
+    level = scrapy.Field()
+    level_learned = scrapy.Field()
     hiragana = scrapy.Field()
     kanji = scrapy.Field()
+    kanji_list = scrapy.Field()
     furigana = scrapy.Field()
     english_meanings = scrapy.Field()
