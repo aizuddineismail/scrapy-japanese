@@ -18,3 +18,16 @@ class VocabularyItem(scrapy.Item):
     kanji_list = scrapy.Field()
     furigana = scrapy.Field()
     english_meanings = scrapy.Field()
+
+class VerbItem(VocabularyItem):
+    isSuru = scrapy.Field()
+    verb = scrapy.Field()
+
+class AdjectiveItem(VocabularyItem):
+    adjective = scrapy.Field()
+
+class CounterItem(VocabularyItem):
+    counter = scrapy.Field()
+
+class NounItem(VocabularyItem):
+    noun = scrapy.Field()
